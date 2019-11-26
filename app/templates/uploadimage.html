@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Hi, {{ current_user.username }}!</h1>
+<hr>
+<h3>Upload an image</h3>
+<hr>
+
+<form action="/imageupload" method="POST" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Select image</label>
+        <div>
+            <input type="file" name="image" id="image">
+
+        </div>
+    </div>
+    <br>
+    <button type="submit" >Upload</button>
+
+</form>
+
+{% endblock %}

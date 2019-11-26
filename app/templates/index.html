@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if current_user.imagename != None %}
+<table>
+    <tr>
+        <td>
+<img src = "{{url_for('static', filename='uploadimage/'+ current_user.imagename)}}" alt="Image not found" width=200 height =100>
+            {% endif %}</td>
+<td>
+<h1> {{ current_user.username }}</h1>
+</td>
+
+        <td>
+            <form action="/post" method="post">
+                <textarea  name ="post"> </textarea>
+                <input type = "submit" vale = "Post">
+            </form>
+
+        </td>
+    </tr>
+    </table>
+<br>
+
+{% for post in posts %}
+<div><p>{{current_user.username }} says: <b>{{ post.body }}</b></p></div>
+{% endfor %}
+
+{% endblock %}

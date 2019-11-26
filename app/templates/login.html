@@ -1,0 +1,24 @@
+
+
+
+{%block content%}
+<h1> Sign In</h1>
+<form action="/securelogin" method="post">
+
+    <p>
+        {{form.username.label}}<br>
+        {{form.username()}}
+
+    </p>
+    <p>
+        {{form.password.label}}<br>
+        {{form.password()}}
+
+    </p>
+    <p>
+        {{form.submit()}}
+    </p>
+    <p>New User? <a href="/register1">Click to Register!</a></p>
+
+</form>
+{% endblock %}
